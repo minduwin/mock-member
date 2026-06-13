@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="titleHead">
+        <h1><%= title %></h1>
+    </div>
+    <div class="disclaimer">
+        <div class="discInfo">
+            <h3>Become an Admin of the Secret Club</h3>
+            <p>To manage all the messages, click the button below to become an official Admin.</p>
+        </div>
+        <div class="adminForm">
+            <form method="POST" action="/beAdmin">
+                <div class="activateForm">
+                    <input type="checkbox" id="adm" name="adm" required>
+                    <label for="adm">I want to become an Admin and view all the message details and also delete them.</label>
+                </div>
+                <div class="activateBtn">
+                    <button type="submit">Activate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

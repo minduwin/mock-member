@@ -21,6 +21,12 @@ app.use(session({ secret: 'mario', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Global middleware to access local variable as user
+app.use((req, res, next) => {
+    res.locals.user = req.user;
+    next();
+});
+
 app.use('/', appRouter);
 
 app.listen(port, (error) => {

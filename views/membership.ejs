@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="titleHead">
+        <h1><%= title %></h1>
+    </div>
+    <div class="disclaimer">
+        <div class="discInfo">
+            <h3>Become a Member of the Secret Club</h3>
+            <p>To see who posted the messages and on what date, click the button below to become an official member.</p>
+        </div>
+        <div class="memberForm">
+            <form method="POST" action="/membership">
+                <div class="activateForm">
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <label for="agree">I want to become a member and view all the message details.</label>
+                </div>
+                <div class="activateBtn">
+                    <button type="submit">Activate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

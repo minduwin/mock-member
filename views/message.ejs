@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="titleHead">
+        <h1>Add a <%= title %></h1>
+    </div>
+    <% if (locals.user) { %>
+        <h3><%= user.username %></h3>
+    <% } %>
+    <div class="messageBox">
+        <div class="messageForm">
+            <form method="POST" action="/message">
+                <div class="textarea-group">
+                    <textarea name="info" id="info" rows="5"></textarea>
+                    <label for="info">Message</label>
+                </div>
+                <div class="messageBtn">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

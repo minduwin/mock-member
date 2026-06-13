@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="titleHead">
+        <h1><%= title %></h1>
+    </div>
+    <% if (locals.user) { %>
+        <h3><%= user.username %></h3>
+    <% } %>
+    <div class="register">
+        <div class="registerForm">
+            <form action="/register" method="POST">
+                <div class="input-group">
+                    <input type="text" id="firstname" name="firstname" required>
+                    <label for="firstname">First Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="lastname" name="lastname" required>
+                    <label for="lastname">Last Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirmPwd" name="confirmPwd" required>
+                    <label for="confirmPwd">Confirm Password</label>
+                </div>
+                <div class="registerBtn">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+</body>
+</html>

@@ -7,6 +7,64 @@
 </head>
 <body>
     <h1><%= title %></h1>
-    <h3>Ola, Manolinho!!</h3>
+    <% if (locals.user) { %>
+        <h3>Ola, <%= user.username %></h3>
+        <a href="/logout" class="logoutBtn">
+            <button>Logout</button>
+        </a>
+    <% } else { %>
+        <h3>Hi. Please log in!</h3>
+    <% } %>
+    <a href="/register">Register</a>
+    <a href="/login">Login</a>
+    <a href="/membership">Member</a>
+    <a href="/message">Message</a>
+    <a href="/beAdmin">Admin</a>
+
+    <div class="messages">
+        <% messages.forEach(msg => { %>
+            <div class="allInfo">
+                <!-- <div class="userPic">
+                    <img src="icons/person.svg" alt="person">
+                </div> -->
+                <div class="userInfo">
+                    <% if (locals.user && locals.user.member === true) { %>
+                        <div class="userElements">
+                            <div class="userEl-name">
+                                <p><%= msg.username %></p>
+                            </div>
+                                <div class="userEl-date">
+                                <p><%= msg.added ? new Date(msg.added).toLocaleDateString('en-US', { month: 'short', day: '2-digit' }) : '' %></p>
+                                </div>                                
+                            <% if (locals.user && locals.user.admin) { %>
+                                <form action="/<%= msg.message_id %>/delete" method="POST">
+                                    <button type="submit" onclick="return confirm('Are you sure?')">
+                                        Delete
+                                    </button>
+                                </form> 
+                            <% } %>
+                            </div>
+                    <% } else { %>
+                        <small class="hiddenUser">Anonymous <span>(Only for members)</span></small>
+                    <% } %>
+                    <div class="msgText">
+                        <p><%= msg.text %></p>
+                    </div>
+                    <!-- <div class="msgIcons">
+                        <div class="favorite">
+                            <img src="icons/favorite.svg" alt="favorite">
+                        </div>
+                        <div class="comment">
+                            <img src="icons/comment.svg" alt="comment">
+                        </div>                          
+                        <div class="share">
+                            <img src="icons/share.svg" alt="share">
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+        <% }) %>
+    </div>
 </body>
 </html>
