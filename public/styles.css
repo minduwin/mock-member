@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('./images/main.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.mainMessages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.messages, .login, 
+.input-group input,
+.register, 
+.disclaimer, 
+.messageBox {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* Index styles */
+.allInfo {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    max-width: 300px;
+    border: 0.5px solid rgb(211, 211, 211);
+    border-radius: 10px;
+}
+
+.userPic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.userPic span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 1px solid rgb(216, 216, 216);
+    padding: 8px;
+}
+
+.userElements {
+    font-size: 0.7em;
+    display: flex;
+    width: 230px;
+}
+
+.userEl-name {
+    font-weight: 600;
+}
+
+/* Float element to the right */
+.userEl-date {
+    display: flex;
+    margin-left: auto;
+}
+
+.hiddenUser span {
+    color: grey;
+    font-size: 0.7em;
+}
+
+.msgText {
+    margin: 5px 0px;
+}
+
+.msgText p {
+    color: #fff;
+    font-size: 0.7em;
+}
+
+.msgIcons {
+    display: flex;
+}
+
+.msgIcons img {
+    width: 10px;
+    margin-right: 8px;
+    margin-top: 3px;
+    filter: brightness(0) saturate(100%) invert(65%) sepia(0%) saturate(7478%) hue-rotate(134deg) brightness(77%) contrast(98%);
+}
+
+.favorite:hover {
+    filter: brightness(0) saturate(100%) invert(29%) sepia(73%) saturate(5545%) hue-rotate(353deg) brightness(93%) contrast(94%);
+    cursor: pointer;
+}
+
+.comment:hover {
+    filter: brightness(0) saturate(100%) invert(10%) sepia(93%) saturate(6569%) hue-rotate(237deg) brightness(103%) contrast(95%);
+    cursor: pointer;
+}
+
+.share:hover {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(91%) saturate(3063%) hue-rotate(94deg) brightness(100%) contrast(104%);
+    cursor: pointer;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    bottom: 38px;
+    z-index: 2;
+    width: 56px;
+    border-radius: 14px;
+    background: rgb(0 0 0 / 12% );
+    backdrop-filter: blur(10px);
+    transition: width 0.45s;
+}
+
+.sidebar.open {
+    width: 190px;
+}
+
+.sidebar button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.inner {
+    position: absolute;
+    inset: 0;
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar header {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding: 0 6px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.sidebar-burger {
+    width: 44px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    color: #f9f9f9;
+}
+
+.sidebar nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 6px;
+    gap: 2px;
+}
+
+.sidebar nav button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 44px;
+    width: 44px;
+    padding: 0 12px;
+    border-radius: 8px;
+    color: #f9f9f9;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.aliasName {
+    color: #f9f9f9;
+}
+
+.sidebar nav button:hover {
+    background: rgb(255 255 255 / 6%);
+    opacity: 1;
+}
+
+.lastOnes {
+    margin-top: auto;
+    margin-bottom: 8px;
+}
+
+.sidebar:not(.open) nav button:hover p {
+    opacity: 1;
+    background: rgb(0 0 0 / 32%);
+    backdrop-filter: blur(10px);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    translate: 16px 0;
+}
+
+.sidebar header p,
+.sidebar nav button p {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s;
+}
+
+.sidebar.open :is(nav button p, header p) {
+    opacity: 1;
+}
+
+.sidebar.open nav button {
+    width: 100%;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
+/* Login and Register styles */
+.titleHead {
+    display: flex;
+    justify-content: center;
+    font-family: 'Work Sans', sans-serif;
+    margin: 20px 0;
+}
+
+.login, .register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 10px auto;
+
+    font-family: 'Work Sans', sans-serif;
+}
+
+.loginForm, .registerForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+
+    padding: 10px;
+}
+
+.input-group {
+    position: relative;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+
+    margin: 20px 0px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 10px;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.3s ease;
+    background-color: transparent;
+    padding: 0 5px;
+}
+
+.input-group input:focus+label, .input-group input:valid+label {
+    top: -7px;
+    font-size: 0.8em;
+
+    background: transparent;
+    color: black;
+    border: none;
+    border-radius: 3px;
+}
+
+.loginBtn, .registerBtn, .messageBtn {
+    display: flex;
+    justify-content: center;
+}
+
+.loginBtn button, 
+.registerBtn button,
+.messageBtn button {
+    font-family: 'Work Sans', sans-serif;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: #36454F;
+    transition: 0.3s ease;
+    color: #fff;
+}
+
+.loginBtn button:hover,
+.registerBtn button:hover,
+.messageBtn button:hover {
+    cursor: pointer;
+    background: #000000;
+}
+
+/* Membership and Admin styles */
+.disclaimer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0px auto;
+
+    font-family: 'Work Sans', sans-serif;
+}
+
+.discInfo h3 {
+    text-align: center;
+    font-size: 1.7em;
+    margin: 15px 10px;
+}
+
+.discInfo p {
+    margin: 10px;
+    text-align: center;
+    line-height: 1.5em;
+    color: #5a5959;
+}
+
+.memberForm, .adminForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.activateForm {
+    margin: 15px;
+}
+
+.activateBtn {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.activateBtn button {
+    font-family: 'Work Sans', sans-serif;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #36454F;
+    transition: 0.3s ease;
+    color: #fff;
+}
+
+.activateBtn button:hover {
+    cursor: pointer;
+    background: #000000;
+}
+
+/* Message Styles */
+.messageBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 10px auto;
+
+    font-family: 'Work Sans', sans-serif;
+}
+
+.messageForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 450px;
+
+    padding: 10px;
+}
+
+.textarea-group {
+    position: relative;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+
+    margin: 20px auto;
+}
+
+.textarea-group textarea {
+    width: 100%;
+    padding: 14px 10px;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.textarea-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.3s ease;
+    background-color: transparent;
+    padding: 0 5px;
+}
+
+.textarea-group textarea:focus+label, .textarea-group textarea:valid+label {
+    top: -9px;
+    font-size: 0.8em;
+
+    background: transparent;
+    color: #5a5959;
+    border: none;
+    border-radius: 3px;
+}

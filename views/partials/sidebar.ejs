@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Sidebar</title>
+</head>
+<body>
+    <aside id="sidebar" class="sidebar">
+        <div class="inner">
+            <% if (locals.user) {%>
+                <header>
+                    <button id="burger" class="sidebar-burger">
+                        <span id="burgerIcon" class="material-icons">
+                            menu
+                        </span>
+                    </button>
+                    <p class="aliasName"><%= user.username %></p>
+                </header>
+                <nav>
+                    <a href="/">
+                        <button>
+                            <span class="material-icons">home</span>
+                            <p>Home</p>
+                        </button>
+                    </a>
+                    <a href="/message">
+                        <button>
+                            <span class="material-icons">add_comment</span>
+                            <p>Comment</p>
+                        </button>
+                    </a>
+                    <a href="/login">
+                        <button>
+                            <span class="material-icons">login</span>
+                            <p>Login</p>
+                        </button>
+                    </a>
+                    <a href="/register">
+                        <button>
+                            <span class="material-icons">app_registration</span>
+                            <p>Register</p>
+                        </button>
+                    </a>
+                    <a href="/membership">
+                        <button>
+                            <span class="material-icons">card_membership</span>
+                            <p>Member</p>
+                        </button>
+                    </a>
+                    <a href="/beAdmin">
+                        <button>
+                            <span class="material-icons">add_moderator</span>
+                            <p>Admin</p>
+                        </button>
+                    </a>
+                    <div class="lastOnes">
+                        <a href="/logout" class="logoutBtn">
+                            <button>
+                                <span class="material-icons">logout</span>
+                                <p>Logout</p>
+                            </button>
+                        </a>
+                        <a href="" class="settingsBtn">
+                            <button>
+                                <span class="material-icons">settings</span>
+                                <p>Settings</p>
+                            </button>
+                        </a>
+                    </div>
+                    
+                </nav>
+            <% } else { %>
+                <header>
+                    <button id="burger" class="sidebar-burger">
+                        <span id="burgerIcon" class="material-icons">
+                            menu
+                        </span>
+                    </button>
+                    <p class="aliasName">Please log in...</p>
+                </header>
+                <nav>
+                    <a href="/">
+                        <button>
+                            <span class="material-icons">home</span>
+                            <p>Home</p>
+                        </button>
+                    </a>
+                    <a href="/login">
+                        <button>
+                            <span class="material-icons">login</span>
+                            <p>Login</p>
+                        </button>
+                    </a>
+                    <a href="/register">
+                        <button>
+                            <span class="material-icons">app_registration</span>
+                            <p>Register</p>
+                        </button>
+                    </a>
+                </nav>
+            <% } %>
+        </div>
+    </aside>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const burger = document.getElementById('burger');
+        const icon = document.getElementById('burgerIcon');
+        let isOpen = false;
+
+        burger.addEventListener('click', () => {
+            isOpen = !isOpen;
+            
+            sidebar.classList.toggle('open');
+            icon.textContent = isOpen ? 'close' : 'menu';
+        });
+    </script>
+</body>
+</html>
