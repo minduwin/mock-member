@@ -41,7 +41,7 @@ body {
     display: flex;
     margin: 10px;
     padding: 10px;
-    max-width: 300px;
+    max-width: 350px;
     border: 0.5px solid rgb(211, 211, 211);
     border-radius: 10px;
 }
@@ -50,10 +50,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 .userPic span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -66,7 +69,7 @@ body {
 .userElements {
     font-size: 0.7em;
     display: flex;
-    width: 230px;
+    width: 260px;
 }
 
 .userEl-name {
@@ -84,38 +87,56 @@ body {
     font-size: 0.7em;
 }
 
-.msgText {
+.msgGroup {
     margin: 5px 0px;
+
+    display: flex;
+    align-items: center;
 }
 
 .msgText p {
     color: #fff;
     font-size: 0.7em;
+    margin-right: 5px;
+}
+
+.msgDelete {
+    display: flex;
+    margin-left: auto;
+}
+
+.msgDelete button {
+    border: none;
+    background: transparent;
+}
+
+.msgDelete span {
+    font-size: 1.5em;
 }
 
 .msgIcons {
     display: flex;
 }
 
-.msgIcons img {
-    width: 10px;
-    margin-right: 8px;
-    margin-top: 3px;
-    filter: brightness(0) saturate(100%) invert(65%) sepia(0%) saturate(7478%) hue-rotate(134deg) brightness(77%) contrast(98%);
+.msgIcons span {
+    font-size: 1em;
+    margin-right: 10px;
+    margin-top: 5px;
+    filter: brightness(0) saturate(100%) invert(13%) sepia(1%) saturate(4167%) hue-rotate(81deg) brightness(110%) contrast(78%);
 }
 
-.favorite:hover {
+.favorite:hover, .msgDelete button:hover {
     filter: brightness(0) saturate(100%) invert(29%) sepia(73%) saturate(5545%) hue-rotate(353deg) brightness(93%) contrast(94%);
     cursor: pointer;
 }
 
 .comment:hover {
-    filter: brightness(0) saturate(100%) invert(10%) sepia(93%) saturate(6569%) hue-rotate(237deg) brightness(103%) contrast(95%);
+    filter: brightness(0) saturate(100%) invert(44%) sepia(99%) saturate(5095%) hue-rotate(218deg) brightness(100%) contrast(90%);
     cursor: pointer;
 }
 
 .share:hover {
-    filter: brightness(0) saturate(100%) invert(20%) sepia(91%) saturate(3063%) hue-rotate(94deg) brightness(100%) contrast(104%);
+    filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(1098%) hue-rotate(80deg) brightness(111%) contrast(130%);
     cursor: pointer;
 }
 
@@ -168,6 +189,11 @@ body {
     color: #f9f9f9;
 }
 
+.aliasName {
+    color: #f9f9f9;
+    font-family: 'Work Sans', sans-serif;
+}
+
 .sidebar nav {
     flex: 1;
     display: flex;
@@ -187,10 +213,6 @@ body {
     color: #f9f9f9;
     opacity: 0.7;
     transition: 0.3s;
-}
-
-.aliasName {
-    color: #f9f9f9;
 }
 
 .sidebar nav button:hover {
@@ -254,18 +276,19 @@ a:link {
 .loginForm, .registerForm {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 400px;
 
-    padding: 10px;
+    padding: 20px;
 }
 
 .input-group {
     position: relative;
-    width: 250px;
+    width: 300px;
     display: flex;
     flex-direction: column;
 
     margin: 20px 0px;
+    padding: 5px 0px;
 }
 
 .input-group input {
@@ -295,7 +318,7 @@ a:link {
     font-size: 0.8em;
 
     background: transparent;
-    color: black;
+    color: #F9F6EE;
     border: none;
     border-radius: 3px;
 }
@@ -437,7 +460,7 @@ a:link {
     font-size: 0.8em;
 
     background: transparent;
-    color: #5a5959;
+    color: #F9F6EE;
     border: none;
     border-radius: 3px;
 }
