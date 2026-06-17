@@ -22,8 +22,8 @@ body {
     font-family: 'Work Sans', sans-serif;
 }
 
-.messages, .login, 
-.input-group input,
+.messages, 
+.login,
 .register, 
 .disclaimer, 
 .messageBox {
@@ -277,50 +277,102 @@ a:link {
     display: flex;
     flex-direction: column;
     max-width: 400px;
-
     padding: 20px;
+}
+
+.login-Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-Info h3 {
+    font-size: 1.5em;
+    margin: 5px 0;
+    color: #F9F6EE;
+}
+
+.login-Info p {
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: #ececec;
 }
 
 .input-group {
     position: relative;
     width: 300px;
-    display: flex;
-    flex-direction: column;
+    margin: 30px 0px;
+}
 
-    margin: 20px 0px;
-    padding: 5px 0px;
+.input-group .input-icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
 }
 
 .input-group input {
     width: 100%;
-    padding: 14px 10px;
+    padding: 10px 10px 10px 35px;
     font-size: 1em;
-    border: none;
-    outline: none;
-    border-radius: 5px;
+    color: #F9F6EE;
+
+    background: transparent !important; 
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4) !important;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-bottom-color: #F9F6EE !important;
 }
 
 .input-group label {
     position: absolute;
     top: 50%;
-    left: 10px;
+    left: 35px;
     transform: translateY(-50%);
-    color: #777;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 1em;
     pointer-events: none;
-    transition: 0.3s ease;
-    background-color: transparent;
-    padding: 0 5px;
+
+    transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+    transform-origin: left top;
 }
 
-.input-group input:focus+label, .input-group input:valid+label {
-    top: -7px;
-    font-size: 0.8em;
-
-    background: transparent;
+.input-group input:focus ~ label, 
+.input-group input:valid ~ label {
+    transform: translateY(-140%) scale(0.85);
     color: #F9F6EE;
-    border: none;
-    border-radius: 3px;
+    top: 15px;
+}
+
+.input-help {
+    display: flex;
+    font-size: 0.7em;
+    color: #ececec;
+    margin-bottom: 10px;
+}
+
+.remember {
+    display: flex;
+}
+
+.remember input {
+    margin-right: 3px;
+}
+
+.forgot {
+    display: flex;
+    margin-left: auto;
 }
 
 .loginBtn, .registerBtn, .messageBtn {

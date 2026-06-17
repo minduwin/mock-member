@@ -14,16 +14,35 @@
     <div class="login">
         <div class="loginForm">
             <form action="/login" method="POST">
+                <div class="login-Info">
+                    <h3>Welcome back</h3>
+                    <p>Login to your account</p>
+                </div>
                 <div class="input-group">
+                    <div class="input-icon">
+                        <span class="material-icons">person</span>
+                    </div>
                     <input type="text" id="username" name="username" required>
                     <label for="username">Username</label>
                 </div>
                 <div class="input-group">
+                    <div class="input-icon">
+                        <span class="material-icons">lock</span>
+                    </div>
                     <input type="password" id="password" name="password" required>
                     <label for="password">Password</label>
                 </div>
+                <div class="input-help">
+                    <div class="remember">
+                        <input type="checkbox">
+                        <p>Remember me</p>
+                    </div>
+                    <div class="forgot"> 
+                        <p>Forgot password?</p>
+                    </div>
+                </div>
                 <div class="loginBtn">
-                    <button type="submit">Submit</button>
+                    <button type="submit">Login</button>
                 </div>
             </form>    
         </div>
