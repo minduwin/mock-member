@@ -7,7 +7,12 @@
     <title><%= title %></title>
 </head>
 <body>
-    <%- include('partials/sidebar') %>
+    <div class="user-status">
+        <%- include('partials/status') %>
+    </div>
+    <div>
+        <%- include('partials/sidebar') %>
+    </div>
     <div class="titleHead">
         <h1><%= title %></h1>
     </div>

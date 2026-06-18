@@ -8,6 +8,9 @@
     <title><%= title %></title>
 </head>
 <body>
+    <div class="user-status">
+        <%- include('partials/status') %>
+    </div>
     <div>
         <%- include('partials/sidebar') %>
     </div>
@@ -41,7 +44,7 @@
                             <div class="msgDelete">
                                 <% if (locals.user && locals.user.admin) { %>
                                     <form action="/<%= msg.message_id %>/delete" method="POST">
-                                        <button type="submit" onclick="return confirm('Are you sure?')" title="Delete">
+                                        <button type="submit" onclick="return confirm('Are you sure?')">
                                             <span class="material-icons">cancel</span>
                                         </button>
                                     </form> 
