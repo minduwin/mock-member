@@ -14,6 +14,10 @@ body {
     background-attachment: fixed;
 }
 
+.msg-container {
+    min-height: 100vh;
+}
+
 .mainMessages {
     display: flex;
     flex-direction: column;
@@ -36,10 +40,15 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.messages {
+    margin-top: 50px;
+}
+
 /* Status styles */
 .user-status {
     display: flex;
     margin-left: auto;
+    margin-right: 20px;
     float: right;
 }
 
@@ -130,16 +139,23 @@ body {
 
 .userEl-name {
     font-weight: 600;
+    color: #f9f9f9;
 }
 
 /* Float element to the right */
 .userEl-date {
     display: flex;
     margin-left: auto;
+    color: #d6d6d6;
+}
+
+.hiddenUser {
+    font-size: 0.7em;
+    color: #f9f9f9;
 }
 
 .hiddenUser span {
-    color: grey;
+    color: #d6d6d6;
     font-size: 0.7em;
 }
 
@@ -187,8 +203,7 @@ body {
 }
 
 .comment:hover {
-    filter: brightness(0) saturate(100%) invert(44%) sepia(99%) saturate(5095%) hue-rotate(218deg) brightness(100%) contrast(90%);
-    cursor: pointer;
+filter: brightness(0) saturate(100%) invert(10%) sepia(98%) saturate(4821%) hue-rotate(241deg) brightness(87%) contrast(152%);    cursor: pointer;
 }
 
 .share:hover {
@@ -197,8 +212,7 @@ body {
 }
 
 .msgDelete button:hover {
-    filter: brightness(0) saturate(100%) invert(29%) sepia(73%) saturate(5545%) hue-rotate(353deg) brightness(93%) contrast(94%);
-    cursor: pointer;
+filter: brightness(0) saturate(100%) invert(12%) sepia(84%) saturate(6884%) hue-rotate(360deg) brightness(78%) contrast(107%);    cursor: pointer;
 }
 
 /* Sidebar styles */
@@ -329,7 +343,7 @@ a:link {
     justify-content: center;
     align-items: center;
     width: fit-content;
-    margin: 10px auto;
+    margin: 20px auto;
 
     font-family: 'Work Sans', sans-serif;
 }
@@ -538,6 +552,11 @@ a:link {
 }
 
 /* Membership and Admin styles */
+.memberContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .disclaimer {
     display: flex;
     flex-direction: column;
@@ -552,13 +571,14 @@ a:link {
     text-align: center;
     font-size: 1.7em;
     margin: 15px 10px;
+    color: #F9F6EE;
 }
 
 .discInfo p {
     margin: 10px;
     text-align: center;
     line-height: 1.5em;
-    color: #5a5959;
+    color: #ececec;
 }
 
 .memberForm, .adminForm {
@@ -567,6 +587,7 @@ a:link {
     justify-content: center;
     margin: 0px auto;
     text-align: center;
+    color: #F9F6EE;
 }
 
 .activateForm {
@@ -576,17 +597,18 @@ a:link {
 .activateBtn {
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin: 20px 0px;
 }
 
 .activateBtn button {
     font-family: 'Work Sans', sans-serif;
-    padding: 10px 15px;
+    padding: 12px 30px;
     border: none;
     border-radius: 5px;
     background: #36454F;
     transition: 0.3s ease;
     color: #fff;
+    font-size: 1.2em;
 }
 
 .activateBtn button:hover {
@@ -595,6 +617,11 @@ a:link {
 }
 
 /* Message Styles */
+.messageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .messageBox {
     display: flex;
     justify-content: center;
@@ -608,10 +635,11 @@ a:link {
 .messageForm {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     max-width: 450px;
-
     padding: 10px;
+    margin: 0px 20px;
 }
 
 .textarea-group {
@@ -619,8 +647,7 @@ a:link {
     width: 450px;
     display: flex;
     flex-direction: column;
-
-    margin: 20px auto;
+    margin: 20px auto 0px auto;
 }
 
 .textarea-group textarea {
@@ -630,6 +657,7 @@ a:link {
     border: none;
     outline: none;
     border-radius: 5px;
+    margin: 10px 0;
 }
 
 .textarea-group label {
@@ -638,16 +666,15 @@ a:link {
     left: 10px;
     transform: translateY(-50%);
     color: #777;
-    font-size: 1em;
+    font-size: 1.2em;
     pointer-events: none;
     transition: 0.3s ease;
     background-color: transparent;
-    padding: 0 5px;
 }
 
 .textarea-group textarea:focus+label, .textarea-group textarea:valid+label {
     top: -9px;
-    font-size: 0.8em;
+    font-size: 1.2em;
 
     background: transparent;
     color: #F9F6EE;
@@ -661,4 +688,105 @@ a:link {
 
 ::view-transition-group(root) {
     animation-duration: 1s;
+}
+
+@media screen and (max-width: 768px) {
+    .msg-container {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 70px;
+        margin: 0px 20px;
+    }
+  
+    /* Sidebar */
+    .sidebar, .sidebar.open {
+        position: fixed;
+        top: auto;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100% !important;
+        height: 60px;
+        border-radius: 14px 14px 0 0;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .inner {
+        position: static;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+    }
+
+    .sidebar header,
+    .sidebar-burger,
+    .aliasName {
+        display: none !important;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+    }
+
+    .sidebar nav button,
+    .sidebar.open nav button {
+        width: auto;
+        height: 44px;
+        opacity: 0.9;
+    }
+
+    .sidebar nav button p,
+    .sidebar:not(.open) nav button:hover p {
+        display: none !important;
+    }
+
+    .lastOnes {
+        margin: 0;
+        display: flex;
+        gap: 2px;
+    }
+
+    /* Message */
+    .messageBox {
+        max-width: 400px;
+    }
+
+    .messageForm {
+        max-width: 350px;
+    }
+
+    .textarea-group {
+        width: 350px;
+    }
+
+    /* Membership */
+    .disclaimer {
+        margin: 10px 20px;
+    }
+
+    .discInfo h3 {
+        font-size: 1.4em;
+    }
+
+    .discInfo p {
+        font-size: 0.9em;
+    }
+
+    .activateForm label {
+        font-size: 0.9em;
+    }
+
+    .activateBtn button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
 }

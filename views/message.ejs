@@ -7,27 +7,26 @@
     <title><%= title %></title>
 </head>
 <body>
-    <div class="user-status">
-        <%- include('partials/status') %>
-    </div>
-    <div>
-        <%- include('partials/sidebar') %>
-    </div>
-    <div class="titleHead">
-        <h1>Add a <%= title %></h1>
-    </div>
-    <div class="messageBox">
-        <div class="messageForm">
-            <form method="POST" action="/message">
-                <div class="textarea-group">
-                    <textarea name="info" id="info" rows="5"></textarea>
-                    <label for="info">Message</label>
-                </div>
-                <div class="messageBtn">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
+    <main class="messageContainer">
+        <div class="user-status">
+            <%- include('partials/status') %>
         </div>
-    </div>
+        <div class="messageBox">
+            <div class="messageForm">
+                <form method="POST" action="/message">
+                    <div class="textarea-group">
+                        <textarea name="info" id="info" rows="5"></textarea>
+                        <label for="info">Message</label>
+                    </div>
+                    <div class="messageBtn">
+                        <button type="submit">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="user-sidebar">
+            <%- include('partials/sidebar') %>
+        </div>
+    </main>    
 </body>
 </html>

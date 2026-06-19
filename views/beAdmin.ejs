@@ -7,31 +7,30 @@
     <title><%= title %></title>
 </head>
 <body>
-    <div class="user-status">
-        <%- include('partials/status') %>
-    </div>
-    <div>
-        <%- include('partials/sidebar') %>
-    </div>
-    <div class="titleHead">
-        <h1><%= title %></h1>
-    </div>
-    <div class="disclaimer">
-        <div class="discInfo">
-            <h3>Become an Admin of the Secret Club</h3>
-            <p>To manage all the messages, click the button below to become an official Admin.</p>
+    <main class="memberContainer">
+        <div class="user-status">
+            <%- include('partials/status') %>
         </div>
-        <div class="adminForm">
-            <form method="POST" action="/beAdmin">
-                <div class="activateForm">
-                    <input type="checkbox" id="adm" name="adm" required>
-                    <label for="adm">I want to become an Admin and view all the message details and also delete them.</label>
-                </div>
-                <div class="activateBtn">
-                    <button type="submit">Activate</button>
-                </div>
-            </form>
+        <div class="disclaimer">
+            <div class="discInfo">
+                <h3>Become an Admin of the Secret Club</h3>
+                <p>To manage all the messages, click the button below to become an official Admin.</p>
+            </div>
+            <div class="adminForm">
+                <form method="POST" action="/beAdmin">
+                    <div class="activateForm">
+                        <input type="checkbox" id="adm" name="adm" required>
+                        <label for="adm">I want to become an Admin and view all the message details and also delete them.</label>
+                    </div>
+                    <div class="activateBtn">
+                        <button type="submit">Activate</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+        <div class="user-sidebar">
+            <%- include('partials/sidebar') %>
+        </div>
+    </main>
 </body>
 </html>
