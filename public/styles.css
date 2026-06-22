@@ -355,6 +355,31 @@ a:link {
     padding: 20px;
 }
 
+/* Styling for the Success Message */
+.alert-success {
+    background-color: #e8f5e9; /* Light green, very soft */
+    color: #2e7d32;            /* Darker green for readability */
+    padding: 12px 20px;
+    margin-bottom: 25px;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;        /* Matches your form inputs */
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Optional: Add an icon if you have one available */
+.alert-success::before {
+    content: 'check_circle'; /* Material Icon name */
+    font-family: 'Material Symbols Outlined';
+    font-size: 1.2rem;
+}
+
 .login-Info {
     display: flex;
     flex-direction: column;

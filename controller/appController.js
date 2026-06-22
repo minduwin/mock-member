@@ -85,6 +85,8 @@ async function newUser(req, res) {
 
     try {
         await db.saveUser(firstname, lastname, username, password);
+        // Set the flash message
+        req.flash('success', 'Account created successfully!');
         res.redirect('/login');
     } catch (error) {
         console.error('Database error: ', error);

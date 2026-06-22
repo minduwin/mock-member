@@ -11,6 +11,11 @@
     <%- include('partials/sidebar') %>
     <div class="login">
         <div class="loginForm">
+            <% if (successMessage && successMessage.length > 0) { %>
+                <div class="alert-success">
+                    <%= successMessage %>
+                </div>
+            <% } %>
             <form action="/login" method="POST">
                 <div class="login-Info">
                     <h3>Welcome back</h3>
@@ -69,5 +74,17 @@
             </form>    
         </div>
     </div>
+
+    <script>
+        const alert = document.querySelector('.alert-success');
+        // Alert will fade away in 5 sec
+        if (alert) {
+            setTimeout(() => {
+                alert.style.transition = 'opacity 0.5s ease';
+                alert.style.opacity = '0';
+                setTimeout(() => alert.remove(), 500);
+            }, 5000);
+        }
+    </script>
 </body>
 </html>

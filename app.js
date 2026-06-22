@@ -5,6 +5,7 @@ const session = require('express-session');
 const passport = require('passport');
 require('dotenv').config();
 const appRouter = require('./routes/appRouter');
+const flash = require('connect-flash');
 
 const port = process.env.PORT || 3000;
 
@@ -20,10 +21,15 @@ app.use('/images', express.static(path.join(__dirname, 'public/images')));
 app.use(session({ secret: 'mario', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 // Global middleware to access local variable as user
 app.use((req, res, next) => {
     res.locals.user = req.user;
+
+    // Flash message logic
+    res.locals.successMessage = req.flash('success');
+    res.locals.errorMessage = req.flash('error');
     next();
 });
 
